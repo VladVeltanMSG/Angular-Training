@@ -8,6 +8,7 @@ import { ProductsDetailsComponent } from './components/containers/product-detail
 import { ProductsListViewComponent } from './components/presentational/products-list-view/products-list-view.component';
 import { ProductsDetailsViewComponent } from './components/presentational/product-details-view/product-details-view.component';
 import { ShoppingCartModule } from './modules/shared/shopping-cart/shopping-cart.module';
+import { ShoppingCartService } from './services/shopping-cart-service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,7 @@ import { ShoppingCartModule } from './modules/shared/shopping-cart/shopping-cart
     ProductsDetailsViewComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ShoppingCartModule],
-  providers: [],
+  providers: [ShoppingCartService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

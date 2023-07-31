@@ -7,7 +7,7 @@ import { Component ,Input,Output,EventEmitter} from '@angular/core';
   styleUrls: ['./icon-button.component.scss'],
 })
 export class IconButtonComponent {
-  @Input() iconType!:String;
+  @Input() iconType!:string;
   @Output() clickEvent=new EventEmitter<void>();
   onClick()
   {

@@ -7,5 +7,6 @@ import { Product } from 'src/app/modules/shared/types/products.types';
   styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent {
-  productss: Product[] = products;
+  products: Product[] = products;
+  
 }

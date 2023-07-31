@@ -2,8 +2,7 @@
   <div class="top-bar">
     <h1>Products</h1>
     <div class="button-container">
-      <button class="to-cart-button">To cart</button>
-      <button class="add-button">Add</button>
+      <button routerLink="/cart" class="to-cart-button">To cart</button>
     </div>
   </div>
 
@@ -13,6 +12,7 @@
         <th>Category</th>
         <th>Product name</th>
         <th>Price</th>
+        <th>See details</th>
         <th class="arrow-button-cell"></th>
       </tr>
     </thead>
@@ -21,8 +21,11 @@
         <td>{{ product.category }}</td>
         <td>{{ product.name }}</td>
         <td>{{ product.price }} Ron</td>
+        <td>
+          <button  [routerLink]="['/productDetails',product.id]" class="see-details">See Details</button>
+        </td>
         <td class="arrow-button-cell">
-          <button class="arrow-button"></button>
+          <button class="arrow-button" (click)="onAddToCart(product)"></button>
         </td>
       </tr>
     </tbody>
