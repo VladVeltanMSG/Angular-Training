@@ -20,11 +20,8 @@
       <td>{{ product.price }} Ron</td>
       <td><input type="number" value="1" min="1" max="50" /></td>
       <td>
-        <app-icon-button
-          iconType="Remove"
-          (clickEvent)="(onRemoveButtonClick)"
-        ></app-icon-button>
-      </td>
+        <app-icon-button [iconType]="'Remove'" (clickEvent)="onRemoveButtonClick(product)"></app-icon-button>
+      </td>      
     </tr>
   </tbody>
 </table>

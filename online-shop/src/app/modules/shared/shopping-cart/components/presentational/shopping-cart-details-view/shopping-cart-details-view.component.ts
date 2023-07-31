@@ -10,9 +10,10 @@ export class ShoppingCartDetailsViewComponent {
   @Input() products!: Product[];
 
   constructor(private cartService: ShoppingCartService) {} // Inject the ShoppingCartService
-  
+
   onRemoveButtonClick(product: Product) {
     console.log('Removed');
     this.cartService.removeFromCart(product.id);
+    this.products = this.cartService.getCartItems(); // Update the products list after removing the item
   }
 }

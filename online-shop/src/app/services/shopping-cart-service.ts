@@ -40,6 +40,7 @@ export class ShoppingCartService {
 
   removeFromCart(productId: string) {
     this.cartItems = this.cartItems.filter(item => item.id !== productId);
+    this.saveCartItems(); // Save the updated cart items in Local Storage
   }
   getCartItemById(productId: string): Product | undefined {
     return this.cartItems.find(item => item.id === productId);
