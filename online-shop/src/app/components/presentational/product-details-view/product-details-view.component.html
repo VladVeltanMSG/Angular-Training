@@ -1,0 +1,29 @@
+<body class="body">
+  <div class="title_Fles">
+    <h1>Product: {{ product.name }}</h1>
+    <div class="buttons">
+      <button class="edit-button">Edit</button>
+      <button class="delete-button">Delete</button>
+    </div>
+  </div>
+
+  <div class="details">
+    <div class="left-details">
+      <h2>Details</h2>
+      <p class="name"><strong>Name:</strong> {{ product.name }}</p>
+      <p class="category"><strong>Category:</strong> {{ product.category }}</p>
+      <p class="price"><strong>Price:</strong> {{ product.price }} Ron</p>
+    </div>
+
+    <div class="image">
+      <img
+        src="https://tse4.mm.bing.net/th/id/OIP.levXu1I7NRYyFsBQFAvOVAHaEs?w=262&h=180&c=7&r=0&o=5&pid=1.7"
+      />
+    </div>
+  </div>
+
+  <div class="footer">
+    <h2>Description</h2>
+    <p>{{ product.description }}</p>
+  </div>
+</body>
