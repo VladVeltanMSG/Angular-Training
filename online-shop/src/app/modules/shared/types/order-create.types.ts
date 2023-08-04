@@ -1,5 +1,5 @@
 import { ProductIdAndQuantity } from "./product-id-and-quantity.types"
-export interface OrderCreateDto {
+export interface OrderCreate {
     customerId: string;
     products: ProductIdAndQuantity[];
   }

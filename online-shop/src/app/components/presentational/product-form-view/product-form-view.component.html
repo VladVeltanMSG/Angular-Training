@@ -41,8 +41,8 @@
     </div>
   
     <div class="buttons-container">
-      <button type="button" class="cancel-button" (click)="onEvent.emit('cancel')">Cancel</button>
-      <button type="button" [disabled] = "!productForm.valid" class = "save-button" (click)="onEvent.emit('save')">Save</button>
+      <button type="button" class="cancel-button" (click)="onSumbit.emit('cancel')">Cancel</button>
+      <button type="button" [disabled] = "!productForm.valid" class = "save-button" (click)="onSumbit.emit('save')">Save</button>
     </div>
 
   </form>

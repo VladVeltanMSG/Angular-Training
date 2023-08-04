@@ -15,27 +15,6 @@ import {
 export class ProductFormViewComponent {
   @Input() product!: Product;
   @Input() productForm!:FormGroup
-  @Output() onEvent: EventEmitter<string> = new EventEmitter<string>();
-
-
-  get name() {
-    return this.productForm.get('name');
-  }
-
-  get category() {
-    return this.productForm.get('category');
-  }
-
-  get price() {
-    return this.productForm.get('price');
-  }
-
-  get image() {
-    return this.productForm.get('image');
-  }
-
-  get description() {
-    return this.productForm.get('description');
-  }
+  @Output() onSumbit: EventEmitter<string> = new EventEmitter<string>();
   
 }

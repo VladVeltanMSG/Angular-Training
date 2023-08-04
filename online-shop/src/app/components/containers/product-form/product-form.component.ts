@@ -14,6 +14,9 @@ import {
   Validators,
   FormControl,
 } from '@angular/forms';
+import { UntilDestroy } from '@ngneat/until-destroy';
+
+@UntilDestroy({ checkProperties: true })
 @Component({
   selector: 'app-product-form',
   templateUrl: './product-form.component.html',
@@ -40,10 +43,10 @@ export class ProductFormComponent implements OnInit {
       image: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
     });
-    console.log(this.productId);
+    
     if (this.productId) {
       this.productService.getProduct(this.productId).subscribe((product) => {
-        console.log('log la product dupa get ', product);
+        
         this.product = product;
         this.productForm.patchValue({
           name: product.name,
@@ -55,58 +58,39 @@ export class ProductFormComponent implements OnInit {
       });
     }
   }
-
-  onEvent($event: string) {
-    //$event primeste save sau cancel de la product-form-view
+  
+  onSumbit($event: string) {
     this.concatenatedString = this.mode + '-' + $event;
     switch (this.concatenatedString) {
       case 'edit-page-save':
-        console.log('in edit-page-save');
         try {
           if (this.productId) {
-            let newProduct: Product = {
+            const editedProduct: Product = {
+              ...this.productForm.value,
               id: this.product.id,
-              name: this.productForm.value.name,
-              description: this.productForm.value.description,
-              category: this.productForm.value.category,
-              image: this.productForm.value.image,
-              price: this.productForm.value.price,
             };
-            console.log(newProduct);
-            this.productService.updateProduct(newProduct).subscribe();
-            console.log('Am updatat un produs cu success');
+            this.productService.updateProduct(editedProduct).subscribe();
           }
         } catch {
-          console.log('failed to update');
+          alert('Failed to update the product.');
         }
         break;
       case 'edit-page-cancel':
         if (this.product) this.productForm.patchValue(this.product);
-        console.log(' in edit-page-cancel');
         break;
       case 'create-page-save':
         try {
-          let newProduct: Product = {
+          const newProduct: Product = {
+            ...this.productForm.value,
             id: '',
-            name: this.productForm.value.name,
-            description: this.productForm.value.description,
-            category: this.productForm.value.category,
-            image: this.productForm.value.image,
-            price: this.productForm.value.price,
           };
-          console.log(newProduct);
           this.productService.addProduct(newProduct).subscribe();
-          console.log('Am creat un produs cu success');
         } catch {
-          console.log('failed to update');
+          alert('Failed to create the product.');
         }
-        console.log('in create-page-save');
-        
         break;
       case 'create-page-cancel':
-        console.log('in create-page-cancel');
-        this.productForm.reset();
-        
+        this.productForm.reset();     
         break;
     }
   }

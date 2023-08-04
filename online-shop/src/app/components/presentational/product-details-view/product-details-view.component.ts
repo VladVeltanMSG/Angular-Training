@@ -7,12 +7,12 @@ import { ShoppingCartService } from 'src/app/modules/shared/shopping-cart/servic
   styleUrls: ['./product-details-view.component.scss'],
 })
 export class ProductsDetailsViewComponent {
-  @Input() product!: Product; // Make sure this line is present
-  @Output() deleteProduct = new EventEmitter<string>(); // Create a custom event
+  @Input() product!: Product;
+  @Output() deleteProduct = new EventEmitter<string>(); 
 
   onDeleteProduct(productId: string) {
     if (window.confirm('Are you sure you want to delete this product?')) {
-      this.deleteProduct.emit(productId); // Emit the custom event with the product ID
+      this.deleteProduct.emit(productId); 
     }
   }
 }
