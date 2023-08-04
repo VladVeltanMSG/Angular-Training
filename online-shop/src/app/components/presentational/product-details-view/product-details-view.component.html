@@ -1,22 +1,22 @@
 <div class="wrapper">
   <div class="title-flex">
-    <h1>Product: {{ product.name }}</h1>
+    <h1 *ngIf="product">Product: {{ product.name }}</h1>
     <div class="buttons">
-      <button class="edit-button">Edit</button>
-      <button class="delete-button">Delete</button>
+      <button *ngIf="product" [routerLink]="['/edit',product.id]" class="edit-button" >Edit</button>
+      <button *ngIf="product" class="delete-button" (click)="onDeleteProduct(product.id)" [routerLink]="['']">Delete</button>
     </div>
   </div>
 
   <div class="details">
     <div class="left-details">
       <h2>Details</h2>
-      <p class="name"><strong>Name:</strong> {{ product.name }}</p>
-      <p class="category"><strong>Category:</strong> {{ product.category }}</p>
-      <p class="price"><strong>Price:</strong> {{ product.price }} Ron</p>
+      <p *ngIf="product" class="name"><strong>Name:</strong> {{ product.name }}</p>
+      <p *ngIf="product" class="category"><strong>Category:</strong> {{ product.category }}</p>
+      <p *ngIf="product" class="price"><strong>Price:</strong> {{ product.price }} Ron</p>
     </div>
 
     <div class="image">
-      <img
+      <img *ngIf="product"
         src="{{product.image}}"
       />
     </div>
@@ -24,6 +24,6 @@
 
   <div class="footer">
     <h2>Description</h2>
-    <p>{{ product.description }}</p>
+    <p *ngIf="product">{{ product.description }}</p>
   </div>
 </div>

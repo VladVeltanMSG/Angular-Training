@@ -22,8 +22,8 @@
     text-align: left;
   }
 }
-/* Style for to Cart and button */
-.to-cart-button {
+
+.to-cart-button,.add-button{
   background-color: #49c04d;
   border: 20;
   color: white;
@@ -35,6 +35,9 @@
     background-color: #2faa35; /* Change the background color on hover */
     color: #333; /* Change the text color on hover */
   }
+}
+.add-button{
+  margin-right:10px
 }
 
 .top-bar {

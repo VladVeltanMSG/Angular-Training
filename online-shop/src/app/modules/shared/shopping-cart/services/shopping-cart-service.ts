@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../modules/shared/types/products.types';
+import { Product } from '../../types/products.types';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +10,7 @@ export class ShoppingCartService {
   constructor() {
     // Încărcăm produsele din Local Storage în momentul inițializării serviciului
     this.loadCartItems();
+    
   }
 
   private saveCartItems() {
@@ -44,6 +45,10 @@ export class ShoppingCartService {
   }
   getCartItemById(productId: string): Product | undefined {
     return this.cartItems.find(item => item.id === productId);
+  }
+  clearCart() {
+    this.cartItems = []; // Clear the cartItems array
+    this.saveCartItems(); // Save the empty cartItems in Local Storage
   }
   
 }

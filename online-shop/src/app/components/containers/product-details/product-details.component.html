@@ -1,1 +1,4 @@
-<app-product-details-view [product]="product"></app-product-details-view>
+<app-product-details-view
+  [product]="product"
+  (deleteProduct)="onDeleteProduct($event)"
+></app-product-details-view>
