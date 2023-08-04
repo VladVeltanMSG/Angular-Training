@@ -1,9 +1,9 @@
 <div class="wrapper">
   <div class="title-flex" *ngIf="product">
     <h1>Product: {{ product.name }}</h1>
-    <div class="buttons">
+    <div class="buttons" *ngIf="userRoles?.includes('admin')">
       <button [routerLink]="['/edit',product.id]" class="edit-button" >Edit</button>
-      <button class="delete-button" (click)="onDeleteProduct(product.id)" [routerLink]="['']">Delete</button>
+      <button [routerLink]="['']" (click)="onDeleteProduct(product.id)"  class="delete-button">Delete</button>
     </div>
   </div>
 

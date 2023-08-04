@@ -3,8 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-create-product-page',
-  templateUrl: './create-product-page.component.html',
-  styleUrls: ['./create-product-page.component.scss']
+  templateUrl: './create-product-page.component.html'
 })
 export class CreateProductPageComponent {
   productId:string|null|undefined

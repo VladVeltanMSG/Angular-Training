@@ -8,7 +8,11 @@ import { ShoppingCartService } from 'src/app/modules/shared/shopping-cart/servic
 })
 export class ProductsDetailsViewComponent {
   @Input() product!: Product;
+  @Input() user!:any;
   @Output() deleteProduct = new EventEmitter<string>(); 
+
+  userRoles = JSON.parse(localStorage.getItem('roles') || '[]');
+
 
   onDeleteProduct(productId: string) {
     if (window.confirm('Are you sure you want to delete this product?')) {

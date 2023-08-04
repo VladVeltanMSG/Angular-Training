@@ -23,28 +23,15 @@
   }
 }
 
-.to-cart-button .add-button{
-  background-color: #49c04d;
-  border: 20;
-  color: white;
-  padding: 8px 16px;
-  font-size: 20px;
-  cursor: pointer;
-  border-radius: 8px; /* Add rounded corners with a radius of 8px */
-  &:hover {
-    background-color: #2faa35; /* Change the background color on hover */
-    color: #333; /* Change the text color on hover */
-  }
-}
-.add-button{
-  margin-right:10px
-}
+
 
 .top-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
+
 .arrow-button-cell {
   width: 1px; /* Set a small initial width */
   white-space: nowrap; /* Prevent wrapping */
@@ -92,3 +79,45 @@
   }
 }
 
+.add-button,
+.to-cart-button,
+.logout {
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s, cursor 0.3s;
+}
+
+.add-button {
+  background-color: #49c04d;
+  color: white;
+}
+
+.to-cart-button {
+  background-color: #49c04d;
+  color: white;
+}
+
+.logout {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.add-button:hover,
+.to-cart-button:hover,
+.logout:hover {
+  background-color: #2faa35;
+  color: white;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background-color: #d0d0d0;
+  color: #333;
+}

@@ -19,8 +19,7 @@ import { UntilDestroy } from '@ngneat/until-destroy';
 @UntilDestroy({ checkProperties: true })
 @Component({
   selector: 'app-product-form',
-  templateUrl: './product-form.component.html',
-  styleUrls: ['./product-form.component.scss'],
+  templateUrl: './product-form.component.html'
 })
 export class ProductFormComponent implements OnInit {
   @Input() productId: string | null | undefined;

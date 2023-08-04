@@ -13,7 +13,6 @@ import { UntilDestroy } from '@ngneat/until-destroy';
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
@@ -26,7 +25,6 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProducts();
-    
   }
   getProducts(): void {
     this.productService
@@ -39,5 +37,8 @@ export class ProductListComponent implements OnInit {
   }
   addToCart($event: Product) {
     this.cartService.addToCart($event);
+  }
+  callLogout() {
+    this.authService.logout;
   }
 }

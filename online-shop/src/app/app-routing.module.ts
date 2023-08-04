@@ -3,13 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { ShoppingCartDetailsComponent } from './modules/shared/shopping-cart/components/containers/shopping-cart-details/shopping-cart-details.component';
 import { ProductListComponent } from './components/containers/product-list/product-list.component';
 import { ProductDetailsComponent } from './components/containers/product-details/product-details.component';
-import { ProductFormComponent } from './components/containers/product-form/product-form.component';
 import { CreateProductPageComponent } from './components/pages/create-product-page/create-product-page.component';
 import { EditProductPageComponent } from './components/pages/edit-product-page/edit-product-page.component';
+import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 const routes: Routes = [
   {
     path: '',
-    component: ProductListComponent,
+    component: LoginPageComponent,
   },
   {
     path: 'cart',

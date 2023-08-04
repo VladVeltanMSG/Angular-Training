@@ -5,8 +5,7 @@ import { ProductService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-edit-product-page',
-  templateUrl: './edit-product-page.component.html',
-  styleUrls: ['./edit-product-page.component.scss']
+  templateUrl: './edit-product-page.component.html'
 })
 export class EditProductPageComponent {
   productId: string | null | undefined;

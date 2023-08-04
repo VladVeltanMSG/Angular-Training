@@ -18,6 +18,7 @@ import { CreateProductPageComponent } from './components/pages/create-product-pa
 import { EditProductPageComponent } from './components/pages/edit-product-page/edit-product-page.component';
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { AuthService } from './services/auth.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     LoginPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ShoppingCartModule,HttpClientModule,RouterModule,ReactiveFormsModule],
-  providers: [ShoppingCartService,{provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}],
+  providers: [ShoppingCartService,{provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true},AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/modules/shared/types/products.types';
 import { ProductService } from 'src/app/services/products.service';
 import { UntilDestroy } from '@ngneat/until-destroy';
+import { AuthService } from 'src/app/services/auth.service';
 
 @UntilDestroy({ checkProperties: true })
 @Component({
@@ -11,10 +12,13 @@ import { UntilDestroy } from '@ngneat/until-destroy';
 })
 export class ProductDetailsComponent implements OnInit {
   product!: Product;
+  user!:any;
+
 
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private authService:AuthService
   ) {}
 
   ngOnInit() {

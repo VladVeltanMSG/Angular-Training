@@ -9,8 +9,7 @@ import { UntilDestroy } from '@ngneat/until-destroy';
 @UntilDestroy({ checkProperties: true })
 @Component({
   selector: 'app-shopping-cart-details',
-  templateUrl: './shopping-cart-details.component.html',
-  styleUrls: ['./shopping-cart-details.component.scss'],
+  templateUrl: './shopping-cart-details.component.html'
 })
 export class ShoppingCartDetailsComponent implements OnInit {
   products: Product[] = [];

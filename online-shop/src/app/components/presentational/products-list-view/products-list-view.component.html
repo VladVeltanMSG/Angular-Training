@@ -2,9 +2,9 @@
   <div class="top-bar">
     <h1>Products</h1>
     <div class="button-container">
-      <button routerLink="/add" class="add-button">Add</button>
-      <button routerLink="/cart" class="to-cart-button">To cart</button>
-      <button routerLink="/login" class="logout">Logout</button>
+      <button routerLink="/add" class="add-button" *ngIf="userRoles?.includes('admin')">Add</button>
+      <button routerLink="/cart" class="to-cart-button" *ngIf="userRoles?.includes('user')">To cart</button>
+      <button routerLink="/login" class="logout" (click)="callLogout" *ngIf="userRoles?.includes('user')">Logout</button>
     </div>
   </div>
 
